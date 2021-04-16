@@ -165,7 +165,7 @@ else()
             message(STATUS "Did not specify STM32_CMSIS_${FAMILY}_PATH, using default STM32_CUBE_${FAMILY}_PATH: ${STM32_CUBE_${FAMILY}_PATH}")
         endif()
 
-        stm32_find_freertos(FreeRTOS::${FAMILY}${CORE_C} ${STM32_CUBE_${FAMILY}_PATH}/Middlewares/Third_Party/FreeRTOS)
+        stm32_find_freertos(FreeRTOS::STM32::${FAMILY}${CORE_C} ${STM32_CUBE_${FAMILY}_PATH}/Middlewares/Third_Party/FreeRTOS)
         foreach(PORT_COMP ${FreeRTOS_FIND_COMPONENTS_PORTS})
             if(FreeRTOS_${PORT_COMP}_PATH AND
                FreeRTOS_${PORT_COMP}_SOURCE AND
